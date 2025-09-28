@@ -1,3 +1,5 @@
+
+// Navbar.jsx
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -11,17 +13,12 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 10;
-      setScrolled(isScrolled);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    // Close mobile menu when route changes
     setMenuOpen(false);
     document.body.classList.remove('no-scroll');
   }, [location]);
@@ -42,7 +39,7 @@ const Navbar = () => {
       <div className="nav-container">
         <Link to="/" className="nav-logo">
           <span className="logo-icon">✨</span>
-          <span className="logo-text">PixelMind AI</span>
+          <span className="logo-text">PixelMind</span>
         </Link>
 
         <button 
@@ -58,30 +55,16 @@ const Navbar = () => {
         <div className={`nav-menu ${menuOpen ? 'active' : ''}`}>
           {user ? (
             <>
-              <Link to="/dashboard" className="nav-link">
-                Dashboard
-              </Link>
-              <Link to="/profile" className="nav-link">
-                Profile
-              </Link>
-              <button onClick={handleLogout} className="nav-button">
-                Logout
-              </button>
+              <Link to="/dashboard" className="nav-link">Dashboard</Link>
+              <Link to="/profile" className="nav-link">Profile</Link>
+              <button onClick={handleLogout} className="nav-button">Logout</button>
             </>
           ) : (
             <>
-              <Link to="/features" className="nav-link">
-                Features
-              </Link>
-              <Link to="/about" className="nav-link">
-                About
-              </Link>
-              <Link to="/login" className="nav-link">
-                Login
-              </Link>
-              <Link to="/register" className="nav-button">
-                Register
-              </Link>
+              <Link to="/features" className="nav-link">Features</Link>
+              <Link to="/about" className="nav-link">About</Link>
+              <Link to="/login" className="nav-link">Login</Link>
+              <Link to="/register" className="nav-button">Register</Link>
             </>
           )}
         </div>
