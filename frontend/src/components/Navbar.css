@@ -1,161 +1,125 @@
 
+/* ===========================
+   Navbar Styles
+   =========================== */
 
-
-/* Navbar.css - Minimal Professional Look */
 .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #ffffff;
-  border-bottom: 1px solid #eaeaea;
-  transition: all 0.3s ease;
-  z-index: 1000;
-}
-
-.navbar.scrolled {
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.8rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+  background-color: #007bff;
+  color: #fff;
 }
 
-.nav-logo {
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  font-size: 1.3rem;
-  color: #222;
-  text-decoration: none;
-}
-
-.logo-icon {
+.navbar-logo {
   font-size: 1.5rem;
-  margin-right: 0.4rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.logo-text {
-  color: #222;
-}
-
-.nav-menu {
+.navbar-links {
   display: flex;
-  align-items: center;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 
-.nav-link {
+.navbar-links a {
   text-decoration: none;
-  color: #444;
+  color: #fff;
   font-weight: 500;
-  position: relative;
   transition: color 0.2s ease;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: #000;
+.navbar-links a:hover {
+  color: #dbe9ff;
 }
 
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: #000;
-  border-radius: 2px;
-}
-
-.nav-button {
+.navbar-button {
   padding: 0.5rem 1rem;
+  border: none;
   border-radius: 6px;
-  font-weight: 500;
-  border: none;
+  background-color: #fff;
+  color: #007bff;
+  font-weight: 600;
   cursor: pointer;
-  background: #000;
-  color: #fff;
-  transition: background 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
-.nav-button:hover {
-  background: #333;
+.navbar-button:hover {
+  background-color: #e6e6e6;
 }
 
-/* Hamburger */
-.nav-toggle {
-  display: none;
+/* ===========================
+   Register Page Styles
+   =========================== */
+
+.register-page {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.register-page h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.register-page form {
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
-  background: transparent;
+  gap: 1rem;
+}
+
+.register-page input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.register-page input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.register-page .btn {
+  padding: 0.75rem 1rem;
   border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-.nav-toggle span {
-  height: 2px;
-  width: 100%;
-  background: #222;
-  border-radius: 2px;
-  transition: all 0.3s ease;
+.register-page .btn-primary {
+  background-color: #007bff;
+  color: #fff;
 }
 
-.nav-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(4px, 4px);
-}
-.nav-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-.nav-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(4px, -4px);
+.register-page .btn-primary:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-1px);
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: flex;
-  }
-
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 70%;
-    max-width: 280px;
-    background: #fff;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
-    transition: right 0.3s ease;
-    box-shadow: -2px 0 8px rgba(0,0,0,0.05);
-  }
-
-  .nav-menu.active {
-    right: 0;
-  }
-
-  .nav-link, .nav-button {
-    width: 100%;
-    text-align: center;
-    padding: 0.8rem;
-    font-size: 1.1rem;
-  }
+.register-page .btn-primary:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 
-/* Disable body scroll when menu open */
-body.no-scroll {
-  overflow: hidden;
+.register-page .error {
+  color: #d9534f;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
-
