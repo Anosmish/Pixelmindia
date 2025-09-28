@@ -2,10 +2,10 @@
   "name": "image-gen-backend",
   "version": "1.0.0",
   "description": "Backend for AI Image Generator",
-  "main": "server.js",
+  "main": "backend/server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
+    "node": "backend/server.js",
     "server": "nodemon server.js"
   },
   "dependencies": {
