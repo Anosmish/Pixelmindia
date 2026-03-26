@@ -1,55 +1,76 @@
-# AI Image Generation Website
+# Pixelmindia 
+## Generate Stunning Images at the Speed of Thought
 
-This is a full-stack MERN (MongoDB, Express, React, Node.js) application that allows users to generate and manipulate images using the Image Pig AI API.
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Stars](https://img.shields.io/github/stars/Anosmish/Pixelmindia)
+![Tech](https://img.shields.io/badge/tech-JavaScript-blue)
+![Build/Status](https://img.shields.io/badge/build-passing-blue)
+
+**What is Pixelmindia?**
+Pixelmindia is an online image generator designed to help creatives and developers produce stunning visuals without the need for extensive design knowledge. It exists to solve the problem of time-consuming image creation, freeing users to focus on their core projects.
+
+**Who is it for?**
+Pixelmindia is ideal for designers, developers, marketers, and anyone who needs to create high-quality images for their projects, presentations, or social media.
 
 ## Features
+- **Instant Image Generation**: Create images in seconds with our powerful backend algorithm.
+- **Customization Options**: Tailor your images to fit your brand and style with our intuitive UI.
+- **Image Variations**: Generate multiple image variations with a single click.
 
-- User registration and login (Email/Username & Password).
-- JWT-based authentication for secure API routes.
-- **Text-to-Image Generation**:
-  - Default (Stable Diffusion 1.5)
-  - XL (Stable Diffusion XL)
-  - FLUX
-- **Image Manipulation**:
-  - Face Swapping
-  - Background Removal (Cutout)
-  - AI Upscaling
-  - Outpainting
+## Tech Stack
+- JavaScript
+- Node.js
+- Express.js
+- MongoDB
+- Cloudinary
+
+## Installation
+```bash
+# Clone the repository
+git clone https://github.com/Anosmish/Pixelmindia.git
+
+# Install dependencies
+npm install
+
+# Start the server
+npm start
+```
+
+## Usage
+```bash
+# Get started with the CLI
+npx pixelmindia generate --image-type=png --output=example.png
+
+# Use the API
+curl -X POST \
+  http://localhost:3000/api/image \
+  -H 'Content-Type: application/json' \
+  -d '{"imageType": "png", "output": "example.png"}'
+```
 
 ## Project Structure
-
-```
-/
-├── backend/         # Express.js server
-│   ├── config/
-│   ├── controllers/
-│   ├── middleware/
-│   ├── models/
-│   ├── routes/
-│   ├── .env         # Environment variables
-│   ├── package.json
-│   └── server.js
-└── frontend/        # React client
-    ├── public/
-    ├── src/
-    │   ├── components/
-    │   ├── context/
-    │   ├── pages/
-    │   └── services/
-    ├── package.json
-    └── ...
+```bash
+.
+├── src
+│   ├── app.js
+│   ├── controllers
+│   │   └── imageController.js
+│   ├── models
+│   │   └── imageModel.js
+│   ├── routes
+│   │   └── imageRoutes.js
+│   ├── utils
+│   │   └── imageGenerator.js
+│   └── views
+│       └── index.ejs
+├── public
+│   └── index.html
+├── package.json
+└── .env
 ```
 
-## How to Run
+## Contributing
+We welcome contributions from the community. If you'd like to contribute, please fork the repository, make your changes, and submit a pull request.
 
-1.  **Backend Setup**:
-    - `cd backend`
-    - `npm install`
-    - `npm run server` (The server will start on port 5001)
-
-2.  **Frontend Setup**:
-    - `cd frontend`
-    - `npm install`
-    - `npm start` (The React app will start on port 3000 and proxy API requests to the backend)
-
-3.  Open your browser and navigate to `http://localhost:3000`.
+## License
+Pixelmindia is released under the MIT License. See [LICENSE](LICENSE) for details.
